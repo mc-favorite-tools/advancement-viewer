@@ -61,18 +61,16 @@ export default function Preview(props: {
             if (node.x > right.x) right = node;
         });
     
-        const height = right.x - left.x + margin.top + margin.bottom;
-    
         const transition = svgRef.current.transition()
             .duration(duration)
-            .attr("viewBox", [0, 0, props.width, props.height])
-        // .tween("resize", window.ResizeObserver ? null : () => () => svg.dispatch("toggle"));
+            .attr("viewBox", [-100, -props.height / 2, props.width, props.height])
+            // .tween("resize", window.ResizeObserver ? null : () => () => svg.dispatch("toggle"));
     
         const node = gNodeRef.current.selectAll("g")
             .data(nodes, d => d.id);
     
         const nodeEnter = node.enter().append("g")
-            .attr("transform", d => `translate(${source.y0},${source.x0})`)
+            // .attr("transform", d => `translate(${source.y0},${source.x0})`)
             .attr("fill-opacity", 0)
             .attr("stroke-opacity", 0)
             .on("dblclick", (event, d) => {
@@ -194,6 +192,21 @@ export default function Preview(props: {
     }, [props.root, props.lineColor])
 
     return (
-        <div id="view"></div>
+        <div style={{ position: 'relative' }}>
+            <div style={{
+                position: 'absolute',
+                backgroundColor: '#eee',
+                width: 3,
+                height: 3,
+                right: 0,
+                borderRadius: '50%',
+                cursor: 'pointer',
+                border: '3px solid #007acc',
+                margin: 2,
+            }} onClick={() => {
+                gG.current.attr('transform', '')
+            }}>111</div>
+            <div id="view"></div>
+        </div>
     )
 }

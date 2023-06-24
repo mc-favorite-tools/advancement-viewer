@@ -110,7 +110,7 @@ export default function App() {
                                 payload: getBg(actNode.data.display.background),
                             })
                         }}>
-                            <Preview lineColor={lineColorArray[active]} width={240} height={116} root={activeNode}/>
+                            <Preview lineColor={lineColorArray[active]} width={240*2.5} height={116*2.5} root={activeNode}/>
                         </Panel>
                     </div>
                     <Board />
