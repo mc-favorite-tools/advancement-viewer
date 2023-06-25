@@ -7,7 +7,7 @@ export default function Header() {
     const [state, dispatch] = useContext(AppContext)
     return (
         <header>
-            <h1>MC Adancement Viewer</h1>
+            <h1>MC Advancement Viewer</h1>
             <div className='right'>
                 <select style={{ border: 'none', backgroundColor: '#000', color: '#fff' }} value={state.version} onChange={(v) => {
                     dispatch({
