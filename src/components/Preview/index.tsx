@@ -43,6 +43,7 @@ export default function Preview(props: {
     const gG = useRef(null)
     const gLinkRef = useRef(null)
     const gNodeRef = useRef(null)
+    const zoomRef = useRef(null)
 
     const v = useMemo(() => state.version.split('.')[1], [state.version])
 
@@ -160,8 +161,11 @@ export default function Preview(props: {
             .style("user-select", "none");
 
         const zoom = d3.zoom()
+            .scaleExtent([0.25, 4])
             .on('zoom', (e) => gG.current.attr('transform', e.transform))
             
+        zoomRef.current = zoom
+
         gG.current = svgRef.current.append('g')
         svgRef.current.call(zoom).on("dblclick.zoom", null)
 
@@ -180,6 +184,8 @@ export default function Preview(props: {
         if (!props.root) {
             return
         }
+        svgRef.current.call(zoomRef.current.transform, d3.zoomIdentity)
+
         const root = props.root
         root.x0 = dy / 2;
         root.y0 = 0;
@@ -204,7 +210,7 @@ export default function Preview(props: {
                 border: '3px solid #007acc',
                 margin: 2,
             }} onClick={() => {
-                gG.current.attr('transform', '')
+                svgRef.current.transition().call(zoomRef.current.transform, d3.zoomIdentity)
             }}>111</div>
             <div id="view"></div>
         </div>
