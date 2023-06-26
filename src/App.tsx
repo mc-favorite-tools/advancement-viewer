@@ -100,7 +100,7 @@ export default function App() {
             <Spin spinning={state.loading}>
                 <div style={{ height: '100vh' }}>
                     <Header />
-                    <div style={{ margin: '50px auto 240px', display: 'flex', justifyContent: 'center' }} className="div">
+                    <div style={{ margin: '32px auto', display: 'flex', justifyContent: 'center' }}>
                         <Panel tabs={tabs} actIndex={active} onTabChange={(index) => {
                             setActive(index)
                             const actNode = rootRef.current.children[index].copy()
@@ -110,7 +110,7 @@ export default function App() {
                                 payload: getBg(actNode.data.display.background),
                             })
                         }}>
-                            <Preview lineColor={lineColorArray[active]} width={240*2.5} height={116*2.5} root={activeNode}/>
+                            <Preview lineColor={lineColorArray[active]} width={570} height={318} root={activeNode}/>
                         </Panel>
                     </div>
                     <Board />

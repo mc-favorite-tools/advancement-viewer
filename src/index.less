@@ -12,13 +12,22 @@ header {
     justify-content: space-between;
     background-color: #000000;
     color: #fff;
-    padding-left: 50px;
-    margin: 0;
-    h1 {
+    padding: 0 50px;
+    >h1 {
         color: #fff;
         margin: 0;
         font-size: 28px;
         line-height: 44px;
+        @media screen and (max-width: 640px) {
+            .pc {
+                display: none;
+            }
+        }
+        @media screen and (min-width: 640px) {
+            .mobile {
+                display: none;
+            }
+        }
     }
     >span {
         padding-left: 20px;
@@ -26,7 +35,6 @@ header {
     }
     .right {
         float: right;
-        margin-right: 50px;
         font-size: 14px;
         line-height: 44px;
         a {
@@ -39,128 +47,158 @@ header {
     }
 }
 
+@media screen and (max-width: 640px) {
+    header {
+        padding: 0 2%;
+    }
+}
+
 @top: 36px;
 @left: 36px;
 
+@W: 250px * 2.5;
+@H: 140px * 2.5;
+
 .panel {
-    display: inline-block;
-    transform: scale(2.5);
-    transform-origin: top;
-    overflow: hidden;
-    font-size: 0;
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
     .tab-bar {
         position: absolute;
-        display: inline-block;
-        transform: scale(1);
-        height: 36px;
+        width: 100%;
+        aspect-ratio: 8;
+        max-width: 640px;
         .tab-item {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 4px;
+            image-rendering: pixelated;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 100%;
+            aspect-ratio: 0.875;
             cursor: pointer;
         }
         &.top {
-            top: @top - 28;
-            left: @left;
             .tab-item  {
-                display: inline-block;
-                margin-right: 4px;
-                background-image: url(./tabs.png);
-                image-rendering: pixelated;
-                width: 28px;
-                height: 32px;
                 &.tl {
-                    background-position: 0px 0px;
+                    background-image: url(./tl.png);
                     &.active {
-                        background-position: 0 -32px;
+                        background-image: url(./tl-active.png);
                     }
                 }
                 &.tc {
-                    background-position: -28px 0px;
+                    background-image: url(./tc.png);
                     &.active {
-                        background-position: -28px -32px;
+                        background-image: url(./tc-active.png);
                     }
                 }
                 &.tr {
-                    background-position: -56px 0px;
+                    background-image: url(./tr.png);
                     &.active {
-                        background-position: -56px -32px;
+                        background-image: url(./tr-active.png);
                     }
                 }
             }
         }
         &.bottom {
-            top: @top + 140 - 4;
-            left: @left;
+            bottom: -73px;
+            left: 0;
             .tab-item {
-                display: inline-block;
-                margin-right: 4px;
-                background-image: url(./tabs.png);
-                image-rendering: pixelated;
-                width: 28px;
-                height: 32px;
+                transform-origin: center;
+                transform: rotateX(180deg);
                 &.bl {
-                    background-position: -84px 0px;
+                    background-image: url(./tl.png);
                     &.active {
-                        background-position: -84px -32px;
+                        background-image: url(./tl-active.png);
                     }
                 }
                 &.bc {
-                    background-position: -112px 0px;
+                    background-image: url(./tc.png);
                     &.active {
-                        background-position: -112px -32px;
+                        background-image: url(./tc-active.png);
                     }
                 }
                 &.br {
-                    background-position: -140px 0px;
+                    background-image: url(./tr.png);
                     &.active {
-                        background-position: -140px -32px;
+                        background-image: url(./tr-active.png);
                     }
                 }
+                // display: inline-block;
+                // margin-right: 4px;
+                // background-image: url(./tabs.png);
+                // image-rendering: pixelated;
+                // width: 28px;
+                // height: 32px;
+                // &.bl {
+                //     background-position: -84px 0px;
+                //     &.active {
+                //         background-position: -84px -32px;
+                //     }
+                // }
+                // &.bc {
+                //     background-position: -112px 0px;
+                //     &.active {
+                //         background-position: -112px -32px;
+                //     }
+                // }
+                // &.br {
+                //     background-position: -140px 0px;
+                //     &.active {
+                //         background-position: -140px -32px;
+                //     }
+                // }
             }
         }
-        &.right {
-            top: @top;
-            left: @left + 256 - 8;
-            .tab-item {
-                display: block;
-                width: 32px;
-                height: 28px;
-                margin-top: 4px;
-                image-rendering: pixelated;
-                background-image: url(./tabs.png);
-                &.rt {
-                    background-position: -96px -64px;
-                    &.active {
-                        background-position: -96px -128px;
-                    }
-                }
-            }
-        }
-        &.left {
-            top: @top;
-            left: @left - 28;
-            .tab-item {
-                display: block;
-                width: 32px;
-                margin-top: 4px;
-                height: 28px;
-                image-rendering: pixelated;
-                background-image: url(./tabs.png);
-                &.lt {
-                    background-position: 0px -64px;
-                    &.active {
-                        background-position: 0px -128px;
-                    }
-                }
-            }
-        }
+        // &.right {
+        //     top: @top;
+        //     left: @left + 256 - 8;
+        //     .tab-item {
+        //         display: block;
+        //         width: 32px;
+        //         height: 28px;
+        //         margin-top: 4px;
+        //         image-rendering: pixelated;
+        //         background-image: url(./tabs.png);
+        //         &.rt {
+        //             background-position: -96px -64px;
+        //             &.active {
+        //                 background-position: -96px -128px;
+        //             }
+        //         }
+        //     }
+        // }
+        // &.left {
+        //     top: @top;
+        //     left: @left - 28;
+        //     .tab-item {
+        //         display: block;
+        //         width: 32px;
+        //         margin-top: 4px;
+        //         height: 28px;
+        //         image-rendering: pixelated;
+        //         background-image: url(./tabs.png);
+        //         &.lt {
+        //             background-position: 0px -64px;
+        //             &.active {
+        //                 background-position: 0px -128px;
+        //             }
+        //         }
+        //     }
+        // }
     }
     .main {
-        display: inline-block;
-        margin: @top @left @top @left;
+        width: 100%;
+        margin-top: 10.95%;
         background-image: url(./window.png);
-        width: 251px;
-        height: 140px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        aspect-ratio: 1.6;
         image-rendering: pixelated;
-        padding: 18px 9px 9px;
+        padding: 6.875% 3.4375% 3.4375%;
         box-sizing: border-box;
         .inner {
             width: 100%;

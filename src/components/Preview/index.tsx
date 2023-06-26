@@ -198,21 +198,21 @@ export default function Preview(props: {
     }, [props.root, props.lineColor])
 
     return (
-        <div style={{ position: 'relative' }}>
-            <div style={{
+        <div style={{ position: 'relative', height: '100%' }}>
+            <div title="重置位置" style={{
                 position: 'absolute',
                 backgroundColor: '#eee',
-                width: 3,
-                height: 3,
+                width: 8,
+                height: 8,
                 right: 0,
                 borderRadius: '50%',
                 cursor: 'pointer',
-                border: '3px solid #007acc',
-                margin: 2,
+                border: '6px solid #007acc',
+                margin: 4,
             }} onClick={() => {
                 svgRef.current.transition().call(zoomRef.current.transform, d3.zoomIdentity)
-            }}>111</div>
-            <div id="view"></div>
+            }}></div>
+            <div id="view" style={{ height: '100%' }}></div>
         </div>
     )
 }

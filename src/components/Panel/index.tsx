@@ -32,35 +32,33 @@ export default function Panel(props: {
                             props.onTabChange?.(index)
                         }}>
                             <div style={{
-                                transform: 'scale(.5)',
-                                marginLeft: -2,
-                                marginTop: 2,
+                                transform: 'translateY(4px)',
                             }} className={`icon-${v} ${tab.display.icon.item.slice(10)}-${v}`}></div>
                         </span>
                     ))
                 }
             </div>
-            <div className="tab-bar right">
-                {/* <span className='tab-item rt'></span>
+            {/* <div className="tab-bar right">
                 <span className='tab-item rt'></span>
                 <span className='tab-item rt'></span>
-                <span className='tab-item rt'></span> */}
-            </div>
-            <div className="tab-bar bottom">
-                {/* <span className='tab-item bl'></span>
+                <span className='tab-item rt'></span>
+                <span className='tab-item rt'></span>
+            </div> */}
+            {/* <div className="tab-bar bottom">
+                <span className='tab-item bl active'></span>
                 <span className='tab-item bc'></span>
                 <span className='tab-item bc'></span>
                 <span className='tab-item bc'></span>
                 <span className='tab-item bc'></span>
                 <span className='tab-item bc'></span>
-                <span className='tab-item bc'></span> */}
-            </div>
-            <div className="tab-bar left">
-                {/* <span className='tab-item lt'></span>
+                <span className='tab-item bc'></span>
+            </div> */}
+            {/* <div className="tab-bar left">
                 <span className='tab-item lt'></span>
                 <span className='tab-item lt'></span>
-                <span className='tab-item lt'></span> */}
-            </div>
+                <span className='tab-item lt'></span>
+                <span className='tab-item lt'></span>
+            </div> */}
             <div className='main'>
                 <div className='inner' style={{
                     backgroundImage: `url(./backgrounds/${state.bg})`,

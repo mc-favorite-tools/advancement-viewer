@@ -10,7 +10,8 @@ export default function Board() {
 
     return (
         <div style={{
-            width: 625,
+            width: '100%',
+            maxWidth: 640,
             margin: '0 auto',
         }}>
             <div style={{
