@@ -96,8 +96,8 @@ export default function App() {
             <Spin spinning={state.loading}>
                 <div style={{ height: '100vh' }}>
                     <Header />
-                    <div style={{ margin: '32px auto', display: 'flex', justifyContent: 'center' }}>
-                        <Panel tabs={tabs} actIndex={active} onTabChange={(index) => {
+                    <div style={{ margin: `32px auto ${tabs.length > 8 ? '48px' : 0}`, display: 'flex', justifyContent: 'center' }}>
+                        <Panel style={{ marginBottom: 32 }} tabs={tabs} actIndex={active} onTabChange={(index) => {
                             setActive(index)
                             const actNode = rootRef.current.children[index].copy()
                             setActiveNode(actNode)
@@ -114,7 +114,7 @@ export default function App() {
                         <Upload.Dragger fileList={[]} style={{ marginBottom: 32 }}
                             beforeUpload={(rcfile) => {
                                 dispatch({ type: 'UpdateLoading', payload: true })
-                                const handleFilter = (file: jszip.JSZipObject) => !file.dir && file.name.startsWith('data/minecraft/advancements')
+                                const handleFilter = (file: jszip.JSZipObject) => !file.dir && /^data\/.+\/advancements/.test(file.name)
                                 jszip.loadAsync(rcfile.arrayBuffer())
                                     .then(res => Promise.all(res.filter((_, file) => handleFilter(file)).map(formatFile)))
                                     .then(update)
@@ -126,7 +126,7 @@ export default function App() {
                                     })
                                 return false
                             }}>
-                            <span>使用离线数据（上传versions目录的jar包）</span>
+                            <span>使用离线数据（上传versions目录的jar包或者数据包）</span>
                         </Upload.Dragger>
                     </div>
                     <Footer />

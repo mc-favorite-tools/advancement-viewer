@@ -20,14 +20,14 @@ export default function Board() {
                 backgroundColor: '#b98f2c',
                 padding: 4,
                 color: '#fff',
-            }} className="title">{state.lang[state.selected.display?.title?.translate]}</div>
+            }} className="title">{state.lang[state.selected.display?.title?.translate] || state.selected.display?.title?.translate}</div>
             <div style={{
                 fontSize: 18,
                 border: '2px solid #555555',
                 backgroundColor: '#212121',
                 padding: 4,
                 color: '#54fc54',
-            }} className="description">{state.lang[state.selected.display?.description?.translate]}</div>
+            }} className="description">{state.lang[state.selected.display?.description?.translate] || state.selected.display?.description?.translate}</div>
             <div style={{ marginBottom: 24 }}>
                 <details>
                     <summary style={{ cursor: 'pointer' }}>数据包（展开 / 折叠）</summary>

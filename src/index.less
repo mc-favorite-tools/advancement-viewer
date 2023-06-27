@@ -73,13 +73,15 @@ header {
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            margin-right: 4px;
             image-rendering: pixelated;
             background-repeat: no-repeat;
             background-size: contain;
             height: 100%;
             aspect-ratio: 0.875;
             cursor: pointer;
+            &:not(:last-child) {
+                margin-right: 1.785%;
+            }
         }
         &.top {
             .tab-item  {
@@ -104,8 +106,7 @@ header {
             }
         }
         &.bottom {
-            bottom: -73px;
-            left: 0;
+            bottom: -14.75%;
             .tab-item {
                 transform-origin: center;
                 transform: rotateX(180deg);
@@ -127,30 +128,6 @@ header {
                         background-image: url(./tr-active.png);
                     }
                 }
-                // display: inline-block;
-                // margin-right: 4px;
-                // background-image: url(./tabs.png);
-                // image-rendering: pixelated;
-                // width: 28px;
-                // height: 32px;
-                // &.bl {
-                //     background-position: -84px 0px;
-                //     &.active {
-                //         background-position: -84px -32px;
-                //     }
-                // }
-                // &.bc {
-                //     background-position: -112px 0px;
-                //     &.active {
-                //         background-position: -112px -32px;
-                //     }
-                // }
-                // &.br {
-                //     background-position: -140px 0px;
-                //     &.active {
-                //         background-position: -140px -32px;
-                //     }
-                // }
             }
         }
         // &.right {
