@@ -71,7 +71,7 @@ export default function Preview(props: {
             .data(nodes, d => d.id);
     
         const nodeEnter = node.enter().append("g")
-            // .attr("transform", d => `translate(${source.y0},${source.x0})`)
+            .attr("transform", d => `translate(${source.y0},${source.x0})`)
             .attr("fill-opacity", 0)
             .attr("stroke-opacity", 0)
             .on("dblclick", (event, d) => {
