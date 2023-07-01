@@ -1,4 +1,4 @@
-# MC Advancement Viewer
+# Advancement Viewer
 
 ## License
 [GPL-3.0](./LICENSE)
