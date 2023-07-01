@@ -1,4 +1,8 @@
-// The GPL License, Copyright (c) 2023, hans0000
+/*
+ * The AGPL License (AGPL)
+ * Copyright (c) 2023 hans000
+ */
+
 import { useContext } from "react"
 import { AppContext } from "../../store"
 

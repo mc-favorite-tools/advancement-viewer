@@ -1,4 +1,8 @@
-// The GPL License, Copyright (c) 2023, hans0000
+/*
+ * The AGPL License (AGPL)
+ * Copyright (c) 2023 hans000
+ */
+
 import clsx from 'clsx'
 import { useContext, useEffect, useMemo, useState } from 'react'
 import { AppContext } from '../../store'

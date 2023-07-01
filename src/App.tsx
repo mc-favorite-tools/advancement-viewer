@@ -1,4 +1,8 @@
-// The GPL License, Copyright (c) 2023, hans0000
+/*
+ * The AGPL License (AGPL)
+ * Copyright (c) 2023 hans000
+ */
+
 import { useEffect, useRef, useState } from "react"
 import * as d3 from 'd3'
 import Preview from "./components/Preview"

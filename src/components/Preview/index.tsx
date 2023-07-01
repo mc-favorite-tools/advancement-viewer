@@ -1,4 +1,8 @@
-// The GPL License, Copyright (c) 2023, hans0000
+/*
+ * The AGPL License (AGPL)
+ * Copyright (c) 2023 hans000
+ */
+
 import * as d3 from "d3"
 import { useContext, useEffect, useMemo, useRef } from "react"
 import useMounted from "../../hooks/useMounted"

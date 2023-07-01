@@ -1,4 +1,8 @@
-// The GPL License, Copyright (c) 2023, hans0000
+/*
+ * The AGPL License (AGPL)
+ * Copyright (c) 2023 hans000
+ */
+
 import { useEffect, useRef } from "react";
 
 export default function useMounted(fn: Function) {

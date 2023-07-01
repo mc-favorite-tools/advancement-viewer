@@ -1,3 +1,7 @@
+/*
+ * The AGPL License (AGPL)
+ * Copyright (c) 2023 hans000
+ */
 import { useContext, useEffect, useMemo, useState } from "react"
 import { AppContext } from "../../store"
 
